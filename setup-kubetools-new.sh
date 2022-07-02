@@ -38,7 +38,7 @@ EOF
 	sed -i 's/^\/dev\/mapper\/centos-swap/#\/dev\/mapper\/centos-swap/' /etc/fstab
 	swapoff /dev/mapper/centos-swap
 
-	yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+	yum install -y iproute-tc kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 	systemctl enable --now kubelet
 fi
